@@ -51,12 +51,8 @@ class Log {
     var value: String by valueProperty
 
     fun contain(text: String): Boolean {
-        val contents = listOf(stageName, stageType, page, obj, action, result, resourceStart, resourceEnd, direction, name, field, row, type, value)
-        for (value in contents) {
-            if (value.contains(text, ignoreCase = true)) {
-                return true
-            }
-        }
-        return false
+        val contents = listOf(id.toString(), stageName, stageType, page, obj, action, result, resourceStart, resourceEnd, direction, name, field, row, type, value)
+        val contentsText = contents.joinToString()
+        return contentsText.contains(text, ignoreCase = true)
     }
 }
