@@ -32,9 +32,9 @@ class LogList : View() {
         columnResizePolicy = SmartResize.POLICY
 
         loggerController.currentMatchedRowsProperty.onChange {
-            selectionModel.select(loggerController.currentMatchedIndex)
-            focusModel.focus(loggerController.currentMatchedIndex)
-            scrollTo(loggerController.currentMatchedIndex)
+            selectionModel.select(loggerController.currentMatchedRows)
+            focusModel.focus(loggerController.currentMatchedRows)
+            scrollTo(loggerController.currentMatchedRows)
             requestFocus()
         }
     }
